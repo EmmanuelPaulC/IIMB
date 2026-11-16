@@ -1,0 +1,708 @@
+/* Tailwind v4 entry and project-wide visual tokens. */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.17 0.025 260);
+  --foreground: oklch(0.93 0.025 88);
+  --card: oklch(0.22 0.034 258);
+  --card-foreground: oklch(0.93 0.025 88);
+  --popover: oklch(0.22 0.034 258);
+  --popover-foreground: oklch(0.93 0.025 88);
+  --primary: oklch(0.76 0.12 78);
+  --primary-foreground: oklch(0.17 0.025 260);
+  --secondary: oklch(0.27 0.04 258);
+  --secondary-foreground: oklch(0.93 0.025 88);
+  --muted: oklch(0.25 0.03 258);
+  --muted-foreground: oklch(0.71 0.025 255);
+  --accent: oklch(0.8 0.105 82);
+  --accent-foreground: oklch(0.17 0.025 260);
+  --destructive: oklch(0.62 0.19 26);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.76 0.12 78 / 22%);
+  --input: oklch(0.76 0.12 78 / 30%);
+  --ring: oklch(0.76 0.12 78);
+  --midnight: oklch(0.17 0.025 260);
+  --navy: oklch(0.22 0.034 258);
+  --gold: oklch(0.76 0.12 78);
+  --pale-gold: oklch(0.87 0.075 86);
+  --ivory: oklch(0.93 0.025 88);
+  --muted-ink: oklch(0.71 0.025 255);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Karla", Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  blockquote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.portfolio-shell {
+  overflow: clip;
+  background: var(--midnight);
+}
+
+.site-nav {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding: 12px 6%;
+  border-bottom: 1px solid var(--border);
+  background: var(--midnight);
+}
+
+.site-logo {
+  flex: 0 0 auto;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 25px;
+}
+
+.nav-links a {
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  color: var(--ivory);
+  font-size: 0.95rem;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.nav-links a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.intro {
+  position: relative;
+  display: grid;
+  min-height: min(820px, calc(100svh - 70px));
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 450px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+  padding: 76px 8% 96px;
+  background: radial-gradient(ellipse 46% 56% at 75% 46%, var(--navy), var(--midnight));
+}
+
+.intro-copy {
+  max-width: 650px;
+}
+
+.grace-line {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  font-style: italic;
+}
+
+.intro-label,
+.section-index {
+  color: var(--muted-ink);
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro-label {
+  margin: 12px 0 2px;
+}
+
+.intro h1 {
+  margin: 0 0 23px;
+  color: var(--ivory);
+  font-size: clamp(3.6rem, 7vw, 6.3rem);
+  font-weight: 600;
+  line-height: 0.93;
+}
+
+.intro blockquote {
+  max-width: 560px;
+  margin: 0;
+  padding-left: 22px;
+  border-left: 2px solid var(--gold);
+  color: var(--pale-gold);
+  font-size: 1.37rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.intro blockquote cite {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted-ink);
+  font-family: "Karla", Arial, sans-serif;
+  font-size: 0.88rem;
+  font-style: normal;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.action-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border: 1px solid var(--gold);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.action-primary {
+  background: var(--gold);
+  color: var(--midnight);
+}
+
+.action-primary:hover {
+  background: var(--pale-gold);
+}
+
+.action-secondary {
+  color: var(--gold);
+}
+
+.action-secondary:hover {
+  background: var(--gold);
+  color: var(--midnight);
+}
+
+.portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  justify-self: end;
+  margin: 0;
+}
+
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 2px solid var(--gold);
+  border-radius: 48% 48% 3px 3px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 0 0 9px var(--midnight), 0 0 0 11px var(--border);
+}
+
+.portrait-frame figcaption {
+  margin-top: 16px;
+  color: var(--muted-ink);
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 1.25rem;
+}
+
+.content-section {
+  width: min(100% - 48px, 960px);
+  margin-inline: auto;
+  padding: 104px 0 38px;
+  scroll-margin-top: 72px;
+}
+
+.section-index {
+  margin-bottom: 17px;
+}
+
+.content-section h2 {
+  margin-bottom: 30px;
+  color: var(--gold);
+  font-size: clamp(2.6rem, 5vw, 3.55rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.content-section h2 em {
+  color: var(--ivory);
+  font-weight: 500;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 70px;
+}
+
+.about-section .section-index {
+  grid-column: 1 / -1;
+}
+
+.about-section h2 {
+  margin: 0;
+}
+
+.about-copy p {
+  margin: 0 0 17px;
+}
+
+.education-section,
+.skills-section {
+  border-top: 1px solid var(--border);
+}
+
+.education-section h2,
+.skills-section h2 {
+  margin-bottom: 28px;
+}
+
+.education-list {
+  border-top: 1px solid var(--border);
+}
+
+.education-item {
+  display: grid;
+  grid-template-columns: 138px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.education-year {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.education-item h3 {
+  margin: 0 0 2px;
+  color: var(--ivory);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.education-item p {
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+}
+
+.education-mark {
+  color: var(--muted-ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  text-align: right;
+}
+
+.achievements-section {
+  padding-bottom: 94px;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 16px;
+}
+
+.achievement {
+  min-width: 0;
+  padding: 23px 25px 26px;
+  border-top: 2px solid var(--gold);
+  background: var(--navy);
+}
+
+.achievement-number {
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.achievement h3 {
+  margin: 0 0 11px;
+  color: var(--pale-gold);
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+
+.achievement p:not(.achievement-number) {
+  margin-bottom: 10px;
+  color: var(--ivory);
+  font-size: 0.96rem;
+}
+
+.achievement-archery {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.achievement-ncc {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.achievement-music {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.achievement-hackathon {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.skills-section {
+  padding-bottom: 82px;
+}
+
+.skill-group + .skill-group {
+  margin-top: 34px;
+}
+
+.skill-group h3 {
+  margin: 0 0 13px;
+  color: var(--pale-gold);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+.skill-list li {
+  padding: 5px 17px;
+  border: 1px solid var(--border);
+  color: var(--ivory);
+  font-size: 0.94rem;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 72px;
+  padding: 82px 0 98px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-section .section-index {
+  grid-column: 1 / -1;
+}
+
+.contact-heading h2 {
+  font-size: clamp(2.5rem, 4.5vw, 3.2rem);
+}
+
+.contact-heading > p {
+  color: var(--muted-ink);
+}
+
+.contact-list {
+  align-self: center;
+  margin: 0;
+}
+
+.contact-list li {
+  display: grid;
+  grid-template-columns: 85px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list li > span:first-child {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.contact-list a,
+.contact-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a:hover {
+  color: var(--pale-gold);
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 6%;
+  border-top: 1px solid var(--border);
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer .grace-line {
+  font-size: 1.3rem;
+}
+
+.site-footer > p:nth-child(2) {
+  text-align: center;
+}
+
+.site-footer > a {
+  justify-self: end;
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+    gap: 36px;
+    padding-inline: 8%;
+  }
+
+  .about-section {
+    column-gap: 38px;
+  }
+
+  .contact-section {
+    column-gap: 36px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 6%;
+  }
+
+  .site-logo {
+    font-size: 1.35rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 2px 18px;
+  }
+
+  .nav-links a {
+    font-size: 0.87rem;
+  }
+
+  .intro {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 45px 8% 76px;
+  }
+
+  .intro-copy {
+    order: 2;
+  }
+
+  .portrait-frame {
+    width: min(90%, 360px);
+    justify-self: center;
+    order: 1;
+  }
+
+  .portrait-frame figcaption {
+    margin-top: 12px;
+  }
+
+  .intro h1 {
+    font-size: clamp(3.5rem, 14vw, 5rem);
+  }
+
+  .intro blockquote {
+    font-size: 1.18rem;
+  }
+
+  .scroll-cue {
+    bottom: 20px;
+  }
+
+  .content-section {
+    width: min(100% - 40px, 520px);
+    padding-top: 72px;
+  }
+
+  .about-section,
+  .contact-section {
+    display: block;
+  }
+
+  .about-section h2 {
+    margin-bottom: 23px;
+  }
+
+  .education-item {
+    grid-template-columns: minmax(0, 1fr) 30px;
+    gap: 3px 12px;
+  }
+
+  .education-year {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .education-item > div {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .education-mark {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-archery,
+  .achievement-ncc,
+  .achievement-music,
+  .achievement-hackathon {
+    grid-area: auto;
+  }
+
+  .contact-section {
+    padding-bottom: 72px;
+  }
+
+  .contact-heading h2 {
+    font-size: 2.75rem;
+  }
+
+  .contact-list {
+    margin-top: 28px;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr auto;
+    padding-inline: 6%;
+  }
+
+  .site-footer > p:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .site-footer > a {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
