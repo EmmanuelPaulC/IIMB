@@ -1,26 +1,44 @@
-# Education Achievement Showcase
+# Personal Resume \& Portfolio Website
 
-Implement exactly the screenshot and nothing else
+**Author:** Emmanuel Paul C  
+**Course Assignment:** Web Development \& CSS Design
 
-This project was built with [Lovable](https://lovable.dev).
+A modern, responsive personal portfolio and resume website designed to showcase academic background, extracurricular achievements, technical skills, and contact details with a refined custom CSS design system.
 
-**Live app**: https://education-achievement-showcase.lovable.app
+\---
 
-## Build with Lovable
+## 🌟 Overview \& Key Sections
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/165fafaf-3de4-4d5b-a35f-2f5aa9129e4a).
+* **About \& Education:** Academic timeline and background overview.
+* **Achievements:** Dedicated showcases for Archery, NCC, Music, and Hackathon participation.
+* **Skills \& Expertise:** Categorized technical and analytical competencies.
+* **Contact:** Direct links to email, phone, location, and GitHub.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+\---
 
-## Development
+## 🎨 Design System \& Styling Decisions
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+* **Color Palette:** Coordinated deep navy, muted gold accents, and warm ivory/charcoal backgrounds for readability and professional contrast.
+* **Typography:** Expressive serif headings paired with clean, highly legible sans-serif body typography.
+* **Layout:** Fully responsive, mobile-first flexbox and grid layouts with clean component spacing.
+
+\---
+
+## 🛠️ Technology Stack
+
+* **Frontend:** React 19, TypeScript
+* **Styling:** Tailwind CSS, modern CSS utility variables
+* **Build Tool:** Vite
+* **Icons \& UI:** Lucide Icons, Radix UI
+
+\---
+
+## 🚀 Running Locally
+
+1. Clone this repository:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+   git clone https://github.com/EmmanuelPaulC/IIMB.git
+   cd IIMB
+
+
